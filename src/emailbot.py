@@ -15,7 +15,6 @@ class Email():
         self.password = password
         self.dest = dest
         self.title = title
-        self.send_email()
 
     #Connects to gmail smtp server and send email genereted by generate_email()
     def send_email(self):

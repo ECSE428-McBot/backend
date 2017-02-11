@@ -6,11 +6,12 @@ from emailbot import Email
 
 def main():
 
-    source = raw_input("Enter gmail adress: ")
-    passwd = raw_input("Enter gmail password: ")
-    dest = "gabriel.gibeault-girard@mail.mcgill.ca"
+    source = raw_input("Enter gmail source adress: ")
+    passwd = raw_input("Enter gmail source password: ")
+    dest = raw_input("Enter destination email: ")
     title = "test email"
     email = Email(source, passwd, dest, title)
+    email.send_email()
 
 
 if __name__ == '__main__':
