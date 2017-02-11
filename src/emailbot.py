@@ -7,7 +7,6 @@ from email.mime.text import MIMEText
 #       password: source password
 #       dest: destination email
 #       title: message subject
-#@return void - email sent
 class Email():
 
     def __init__(self, src, password, dest, title):
@@ -17,6 +16,7 @@ class Email():
         self.title = title
 
     #Connects to gmail smtp server and send email genereted by generate_email()
+    #@return void - email sent
     def send_email(self):
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.ehlo()
