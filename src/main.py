@@ -2,6 +2,8 @@
 
 from emailbot import Email
 
+#used to test email bot
+
 def main():
 
     source = raw_input("Enter gmail adress: ")

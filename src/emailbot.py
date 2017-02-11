@@ -2,6 +2,12 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+#Email bot class. Send an email as plain text and html format through gmail smtp server. Contains email template.
+#@param src: source email
+#       password: source password
+#       dest: destination email
+#       title: message subject
+#@return void - email sent
 class Email():
 
     def __init__(self, src, password, dest, title):
@@ -11,6 +17,7 @@ class Email():
         self.title = title
         self.send_email()
 
+    #Connects to gmail smtp server and send email genereted by generate_email()
     def send_email(self):
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.ehlo()
@@ -20,6 +27,8 @@ class Email():
         server.sendmail(self.src, self.dest, msg)
         server.quit()
 
+    #generate email as plain text and html format using python email.mime lib. Email's template hardcoded within this function.
+    #@return email's content as a string.
     def generate_email(self):
         msg = MIMEMultipart('alternative')
         msg['Subject'] = self.title
