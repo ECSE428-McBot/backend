@@ -6,7 +6,7 @@ from emailbot import Email
 
 def main():
 
-    source = raw_input("Enter gmail source adress: ")
+    source = raw_input("Enter gmail source address: ")
     passwd = raw_input("Enter gmail source password: ")
     dest = raw_input("Enter destination email: ")
     title = "test email"
